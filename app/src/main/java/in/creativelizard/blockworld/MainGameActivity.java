@@ -111,7 +111,11 @@ public class MainGameActivity extends AppCompatActivity implements AIListener {
 
             if(response.getResult().getParameters().get("Speed")!=null) {
                 if (response.getResult().getParameters().get("Speed").getAsString().equals("s")) {
-                    speedNumber = response.getResult().getParameters().get("number").getAsLong();
+                    try {
+                        speedNumber = response.getResult().getParameters().get("number").getAsLong();
+                    }catch (NumberFormatException e){
+                        Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 }
             }else {
                 speedNumber = 1;
@@ -220,6 +224,29 @@ public class MainGameActivity extends AppCompatActivity implements AIListener {
             }
         }else {
             Toast.makeText(this, "Unable to Identify your Speech", Toast.LENGTH_SHORT).show();
+            tvPlayer.setText("OOps!!");
+            llChat.animate().alpha(0).setDuration(200).setListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    llChat.setAlpha(1);
+                    llChat.setVisibility(View.INVISIBLE);
+                }
+
+                @Override
+                public void onAnimationCancel(Animator animation) {
+
+                }
+
+                @Override
+                public void onAnimationRepeat(Animator animation) {
+
+                }
+            });
         }
 
 
