@@ -81,7 +81,6 @@ public class MainGameActivity extends AppCompatActivity implements AIListener {
     @Override
     public void onAudioLevel(float level) {
 
-        float f = level;
     }
 
     @Override
