@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="70dp"
+    android:viewportWidth="100"
+    android:viewportHeight="70">
+
+    <path
+        android:name="chat"
+        android:fillColor="#ffffff"
+        android:pathData="M18.3987,8.541 C14.4879,8.541,11.3395,11.689,11.3395,15.6 L11.3395,37.726
+C11.3395,41.637,14.488,44.785,18.3987,44.785 L81.3873,44.785
+C85.2981,44.785,88.4466,41.637,88.4466,37.726 L88.4466,15.6001
+C88.4466,11.689,85.2981,8.541,81.3873,8.541 Z M69.9896,44.927 L65.8398,53.05
+C63.5574,57.518,61.69,61.313,61.69,61.483
+C61.69,61.857,62.2405,61.287,70.7245,52.122 L77.3854,44.926 L73.6874,44.926 Z" />
+</vector>

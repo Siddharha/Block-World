@@ -1,17 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="in.creativelizard.blockworld.MainGameActivity">
 
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/plr"
+    android:layout_marginRight="8dp"
+    android:gravity="center_horizontal"
+    app:layout_constraintRight_toRightOf="parent"
+    android:layout_marginLeft="8dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:layout_marginBottom="8dp"
+    app:layout_constraintBottom_toTopOf="@+id/btnListen"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="8dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/llChat"
+        android:layout_marginBottom="0dp">
+        <ImageView
+            android:id="@+id/imgChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/imgPlayer"
+            app:layout_constraintLeft_toLeftOf="@+id/imgPlayer"
+            app:layout_constraintRight_toRightOf="@+id/imgPlayer"
+            android:src="@drawable/chat" />
+        <TextView
+            android:id="@+id/tvPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20sp"
+            android:textColor="#000000"
+            android:text="Hello!!" />
+
+
+    </FrameLayout>
 
     <ImageView
         android:id="@+id/imgPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_above="@+id/btnListen"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        app:srcCompat="@mipmap/ic_launcher" />
-</RelativeLayout>
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnListen"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+</LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnListen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="clkSpeak"
+        android:text="Speak"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp" />
+
+</android.support.constraint.ConstraintLayout>
